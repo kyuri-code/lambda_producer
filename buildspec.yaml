@@ -19,11 +19,10 @@ phases:
       - cp -R ${CODEBUILD_SRC_DIR} ./${MODULE_NAME}
       - git clone -b ${BRANCH} https://github.com/${GIT_USERNAME}/${GIT_REPOSITORYNAME}
       - PROJECT_NAME=$(basename ${GIT_REPOSITORYNAME} .git)
-      - pip install --no-cache-dir -r ./${PROJECT_NAME}/requirements.txt -t ./${PROJECT_NAME}/package
   build:
     commands:
       - echo "Packaging the Lambda function"
-      - zip -r ./${MODULE_NAME}.zip ./${PROJECT_NAME}/lib/ ./${PROJECT_NAME}/lambda_function.py ./${PROJECT_NAME}/package
+      - zip -r ./${MODULE_NAME}.zip ./${PROJECT_NAME}/lib/ ./${PROJECT_NAME}/lambda_function.py
   post_build:
     commands:
       - echo Build completed on `date`
