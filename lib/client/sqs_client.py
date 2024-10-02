@@ -33,5 +33,5 @@ class SQSClient:
             print(f"Error sending message to SQS: {e}")
             raise e
         
-    def get_account_id():
-        return STSClient.get_account_id()
+    def get_account_id(self):
+        return self.sts_client.get_account_id()
