@@ -1,8 +1,13 @@
 from sqlalchemy.orm import Session
-from models.log_model import Log, LogModel
-from db_client.db_client import DBClient
-from client.sqs_client import SQSClient
+
 import uuid
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from lib.models.log_model import Log, LogModel
+from lib.db_client.db_client import DBClient
+from lib.client.sqs_client import SQSClient
 
 class ProducerService:
     def __init__(self):
