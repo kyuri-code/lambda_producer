@@ -1,4 +1,4 @@
-from src.services.producer_service import ProducerService
+from lib.services.producer_service import ProducerService
 
 def lambda_hander(event, context):
     producer_service = ProducerService()

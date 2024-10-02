@@ -1,7 +1,7 @@
 import boto3
 import json
 
-from src.constant.config import REGION
+from constant.config import REGION
 
 class SMClient:
 

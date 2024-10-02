@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
-from src.models.log_model import Log, LogModel
-from src.db_client.db_client import DBClient
-from src.client.sqs_client import SQSClient
+from models.log_model import Log, LogModel
+from db_client.db_client import DBClient
+from client.sqs_client import SQSClient
 import uuid
 
 class ProducerService:

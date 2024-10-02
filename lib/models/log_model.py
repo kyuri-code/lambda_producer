@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String
-from src.db_client.db_client import Base
+from db_client.db_client import Base
 from pydantic import BaseModel
 import uuid
 

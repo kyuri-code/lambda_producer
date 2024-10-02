@@ -1,7 +1,7 @@
 import boto3
 import json
-from src.client.sts_client import STSClient 
-from src.constant.config import REGION
+from client.sts_client import STSClient 
+from constant.config import REGION
 
 QUEUE_NAME = 'td-nt-iac-lambda-pc.fifo'
 
