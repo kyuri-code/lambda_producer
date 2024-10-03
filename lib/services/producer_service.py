@@ -23,7 +23,7 @@ class ProducerService:
 
         try:
             # 開始ログをDBに追加
-            start_log = Log(uuid=start_uuid, log_message='Process started', processid=process_id)
+            start_log = Log(uuid=start_uuid, log_message='Producer process started', processid=process_id)
             session.add(start_log)
             session.commit()
 
@@ -31,7 +31,7 @@ class ProducerService:
             self.sqs_client.send_message('This is a test message', process_id)
             
             # 終了ログをDBに追加
-            end_log = Log(uuid=end_uuid, log_message='Process ended', processid=process_id)
+            end_log = Log(uuid=end_uuid, log_message='Producer process ended', processid=process_id)
             session.add(end_log)
             session.commit()
         
